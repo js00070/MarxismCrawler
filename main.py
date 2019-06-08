@@ -40,7 +40,7 @@ def getImgBuf(bookid: str, page: int) -> bytearray :
 
 def saveImgAs(imgBuf: bytearray, filename: str):
     with open(filename,"wb") as fb:
-        print("saving img",filename)
+        #print("saving img",filename)
         fb.write(imgBuf)
         fb.close()
 
@@ -65,6 +65,11 @@ if __name__ == "__main__":
     # # bookid = 'B_01018865_001' # 马克思主义政治经济学人物谱系
     # for n in range(3,60):
     #     getBook(bookidgen(n)) 
+    '''
+    bookid=B_01019144_001
+    bookid=B_01019282_001
+    bookid=B_01019283_001
+    '''
     parser = argparse.ArgumentParser(description='输入若干bookid，从中国共产党思想理论资源数据库 http://data.lilun.cn/ 爬取马克思主义电子书籍')
     parser.add_argument('booklist', type=str, nargs='+',
                         help='bookid的列表')
