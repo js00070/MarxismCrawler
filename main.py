@@ -213,7 +213,7 @@ def getBook(bookid: str) -> dict:
     print('========正在爬取{}========'.format(bookid))
     if not os.path.exists(bookid):
         os.makedirs(bookid)
-    for page in range(1,1000):
+    for page in range(1,3000):
         try:
             if os.path.exists("{}/{}.jpg".format(bookid,str(page).zfill(3))):
                 print('第{}页已存在'.format(page))
