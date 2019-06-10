@@ -13,6 +13,8 @@ pip install -r requirements.txt
 
 爬取bookid分别为B_01019144_001、B_01019282_001、B_01019283_001的三本书，会在当前目录创建三个文件夹，文件夹里是每一页的jpg图片
 
+并且会在下载图片完毕后，自动在当前目录生成由jpg图片合成的pdf文档，pdf文档由bookid命名
+
 ```python
 python main.py B_01019144_001 B_01019282_001 B_01019283_001
 ```
@@ -27,12 +29,5 @@ python main.py B_01019144_001 B_01019282_001 B_01019283_001
 http://data.lilun.cn/Service/?logic=PDFReaderController&call=readPDF&bookid=B_01018144_001&page=1&html=selectText_NOINC&from=online&searchChar=undefined
 ```
 
-## jpg2pdf
+目前爬取了一部分书名与bookid的对应关系，保存在了bookid.csv中，有需要可自行检索或批量下载
 
-爬取结束后可以将jpg转成pdf，推荐使用imagemagick，不过会占用大量内存，需要调高imagemagick的默认内存限制
-
-转换方式如下
-
-```bash
-convert *.jpg output.pdf
-```
